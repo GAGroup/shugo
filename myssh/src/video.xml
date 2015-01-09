@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+				<!--######################## 影音控制器 #####################-->
+    <package name="video" namespace="/video" extends="default">
+	<!-- ????????拦截器 只允许上传视频文件?????????? -->
+	<!-- 单文件上传 -->
+	<action name="uploadeVideo" class="com.video.action.VideoUploadeAction" method="uploadeVideo">
+		<param name="uploadeDocument">myupload</param>
+			<!-- 文件过滤 -->
+			<interceptor-ref name="fileUpload">
+        		<param name="allowedTypes">
+        			video/x-ms-asf,video/x-msvideo,video/quicktime,video/mp4,video/mpeg,video/x-ms-wmv,video/avi,application/octet-stream
+        		</param>
+              <!--   <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,video/x-msvideo</param> -->
+        		 <!-- 文件大小, 以字节为单位 -->
+                <param name="maximumSize">20259560000</param>
+        	</interceptor-ref>
+            <!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+		<result name="success">/success.jsp</result>
+		<result name="input">/error.jsp</result>
+	</action>
+	<!-- 多文件上传 -->
+	<action name="UploadeVideoList" class="com.video.action.VideoUploadeListAction">
+			<param name="uploadeDocument">myupload</param>
+			
+			<!-- 文件过滤 -->
+			<interceptor-ref name="fileUpload">
+        		<param name="allowedTypes">
+        			video/x-ms-asf,video/x-msvideo,video/quicktime,video/mp4,video/mpeg,video/x-ms-wmv,video/avi,application/octet-stream
+        		</param>
+              <!--   <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,video/x-msvideo</param> -->
+        		 <!-- 文件大小, 以字节为单位 -->
+                <param name="maximumSize">20259560000</param>
+        	</interceptor-ref>
+            <!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+		<result name="success">/success.jsp</result>
+		<result name="input">/error.jsp</result>
+	</action>
+       
+	<action name="browersVideo" class="com.video.action.browersVideo">
+		<result name="success" type="stream"/>
+		<result name="input">/error.jsp</result>
+	</action>
+	
+	
+	<action name="browersVideoList" class="com.video.action.browersVideoList" method="browersVideoList">
+		<result name="success">/videopage/frontpage/browersVideoList.jsp</result>
+		<result name="input">/error.jsp</result>
+	</action>
+	
+	
+	
+	
+     <!-- 通过struts直接访问vidwopage的页面 -->
+        <action name="*_front">
+        	<result>/videopage/frontpage/{1}.jsp</result>
+        </action>
+        <action name="*_back" class="com.video.action.VideoPageAction" method="getSupportType">
+        	<result>/videopage/backpage/{1}.jsp</result>
+        </action>
+        
+        
+        
+    </package>
+</struts>

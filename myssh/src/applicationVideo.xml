@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DAO-->
+	<bean id="VideoTypeDAO" class="com.video.dao.impl.VideoTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VideoInfoDAO" class="com.video.dao.impl.VideoInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VideoDirectorDAO" class="com.video.dao.impl.VideoDirectorDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VideoExValueDAO" class="com.video.dao.impl.VideoExValueDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VideoExPropertyDAO" class="com.video.dao.impl.VideoExPropertyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- service -->
+	<bean id="defaultVideoManager" class="com.video.service.impl.DefaultVideoManager">
+		<property name="videoInfoDAO" ref="VideoInfoDAO"></property>
+		<property name="videoTypeDAO" ref="VideoTypeDAO"></property>
+	</bean>
+	
+	<bean id="browersVideoList" class="com.video.action.browersVideoList">
+		<property name="defaultVideoManager" ref="defaultVideoManager"></property>
+	</bean>
+	
+	
+	 
+	<!-- action -->
+	<bean id="videoUploadeAction" class="com.video.action.VideoUploadeAction">
+		<property name="uploadeDocument">
+			<value>"/uploadVideos"</value>
+		</property>
+		<property name="defaultVideoManager" ref="defaultVideoManager"></property>
+	</bean>
+	<bean id="videoUploadeListAction" class="com.video.action.VideoUploadeListAction">
+		<property name="uploadeDocument">
+			<value>"/uploadVideos"</value>
+		</property>
+		<property name="defaultVideoManager" ref="defaultVideoManager"></property>
+	</bean>
+	<bean id="videoPageAction" class="com.video.action.VideoPageAction">
+		<property name="defaultVideoManager" ref="defaultVideoManager"></property>
+	</bean>
+	
+	
+	
+</beans>

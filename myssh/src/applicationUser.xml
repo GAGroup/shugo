@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DAO-->
+	<bean id="userExPropertyValueDAO"
+		class="com.user.dao.impl.UserExPropertyValueDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userExPropertyDAO"
+		class="com.user.dao.impl.UserExPropertyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userFunctionDAO"
+		class="com.user.dao.impl.UserFunctionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userGroupDAO" class="com.user.dao.impl.UserGroupDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userInfoDAO" class="com.user.dao.impl.UserInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userTagDAO" class="com.user.dao.impl.UserTagDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userDAO" class="com.user.dao.impl.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- service -->
+	<bean id="userManager" class="com.user.service.impl.UserManager">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+	
+	
+	<!-- action -->
+	<bean id="userAction" class="com.user.action.UserAction">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+	</bean>
+</beans>

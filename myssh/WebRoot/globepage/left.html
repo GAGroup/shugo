@@ -1,0 +1,177 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/chili-1.7.pack.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/jquery.dimensions.js"></script>
+<script type="text/javascript" src="js/jquery.accordion.js"></script>
+<script language="javascript">
+	jQuery().ready(function(){
+		jQuery('#navigation').accordion({
+			header: '.head',
+			navigation1: true, 
+			event: 'click',
+			fillSpace: true,
+			animated: 'bounceslide'
+		});
+	});
+</script>
+<style type="text/css">
+<!--
+body {
+	margin:0px;
+	padding:0px;
+	font-size: 12px;
+}
+#navigation {
+	margin:0px;
+	padding:0px;
+	width:147px;
+}
+#navigation a.head {
+	cursor:pointer;
+	background:url(images/main_34.gif) no-repeat scroll;
+	display:block;
+	font-weight:bold;
+	margin:0px;
+	padding:5px 0 5px;
+	text-align:center;
+	font-size:12px;
+	text-decoration:none;
+}
+#navigation ul {
+	border-width:0px;
+	margin:0px;
+	padding:0px;
+	text-indent:0px;
+}
+#navigation li {
+	list-style:none; display:inline;
+}
+#navigation li li a {
+	display:block;
+	font-size:12px;
+	text-decoration: none;
+	text-align:center;
+	padding:3px;
+}
+#navigation li li a:hover {
+	background:url(../images/tab_bg.gif) repeat-x;
+		border:solid 1px #adb9c2;
+}
+-->
+</style>
+</head>
+<body>
+<div  style="height:100%;">
+  <ul id="navigation">
+    <li> <a class="head">影音管理</a>
+      <ul>
+        <li><a href="../video/uploadeVideo_back.action" target="rightFrame">上传影音</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">查看/编辑影音</a></li>
+        <li><a href="../video/uploadeVideoList_back.action" target="rightFrame">批量上传</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">发布影音</a></li>
+   	  </ul>
+    </li>
+    
+    <li> <a class="head">商品管理</a>
+      <ul>
+        <li><a href="../video/uploadeVideo_back.action" target="rightFrame">添加商品</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">编辑商品</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">搜索商品</a></li>
+        <li><a href="../video/uploadeVideoList_back.action" target="rightFrame">导入导出</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">批量操作</a></li>
+   	  </ul>
+    </li>
+    
+    <li> <a class="head">商品配置</a>
+      <ul>
+        <li><a href="../video/uploadeVideo_back.action" target="rightFrame">分类管理</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">规格管理</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">品牌管理</a></li>
+        <li><a href="../video/uploadeVideoList_back.action" target="rightFrame">标签管理</a></li>
+        <li><a href="../video/browersVideoList.action" target="rightFrame">库存提醒</a></li>
+   	  </ul>
+    </li>
+    
+      <li> <a class="head">订单列表</a>
+      <ul>
+        <li><a href="#" target="rightFrame">添加订单</a></li>
+        <li><a href="#" target="rightFrame">处理订单</a></li>
+        <li><a href="#" target="rightFrame">筛选订单</a></li>
+        <li><a href="#" target="rightFrame">单据管理</a></li>
+      </ul>
+    </li>
+    
+    
+      <li> <a class="head">会员管理</a>
+      <ul>
+        <li><a href="AddKind.php" target="rightFrame">添加会员</a></li>
+        <li><a href="Kinds.php" target="rightFrame">删除会员</a></li>
+        <li><a href="Kinds.php" target="rightFrame">搜索会员</a></li>
+        <li><a href="Kinds.php" target="rightFrame">批量操作</a></li>
+      </ul>
+    </li>
+    
+      <li> <a class="head">会员设置</a>
+      <ul>
+        <li><a href="AddKind.php" target="rightFrame">添加等级</a></li>
+        <li><a href="Kinds.php" target="rightFrame">查看/删除等级</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">会员注册</a>
+      <ul>
+        <li><a href="#" target="rightFrame">新增注册项</a></li>
+        <li><a href="#" target="rightFrame">编辑注册项</a></li>
+        <li><a href="#" target="rightFrame">隐藏注册项</a></li>
+        <li><a href="#" target="rightFrame">删除注册项</a></li>
+        <li><a href="#" target="rightFrame">隐私保护</a></li>
+        <li><a href="#" target="rightFrame">注册协议</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">留言评论管理</a>
+      <ul>
+        <li><a href="../messagepage/backpage/browersMessage.jsp" target="rightFrame">查看/删除留言</a></li>
+        <li><a href="../messagepage/backpage/browersMessage.jsp" target="rightFrame">查看/删除评论</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">站内消息</a>
+      <ul>
+        <li><a href="#" target="rightFrame">回复站内信</a></li>
+        <li><a href="#" target="rightFrame">删除站内信</a></li>
+        <li><a href="#" target="rightFrame">搜索站内信</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">消息设置</a>
+      <ul>
+        <li><a href="#" target="rightFrame">基本设置</a></li>
+        <li><a href="#" target="rightFrame">咨询设置</a></li>
+        <li><a href="#" target="rightFrame">评论设置</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">邮件短信服务</a>
+      <ul>
+        <li><a href="#" target="rightFrame">邮件平台设置</a></li>
+        <li><a href="#" target="rightFrame">短信平台设置</a></li>
+        <li><a href="#" target="rightFrame">编辑模板</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">友情链接管理</a>
+      <ul>
+        <li><a href="../pagesetpage/friendlink/browersFriendlink.jsp" target="rightFrame">添加友情链接</a></li>
+        <li><a href="#" target="rightFrame">查看/修改友情链接</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">用户管理</a>
+      <ul>
+        <li><a href="../userpage/backpage/browersUserCategory.jsp" target="rightFrame">用户角色管理</a></li>
+        <li><a href="../userpage/backpage/browersUser.jsp" target="rightFrame">查看|注册管理员</a></li>
+        
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+[{  
+        text : '影音管理', 
+        children : [  
+        { text : '上传影音', leaf: true, href:'video/uploadeVideo_back.action',hrefTarget:'right'},
+        { text : '查看影音', leaf: true, href:'video/browersVideoList.action',hrefTarget:'right'},
+        { text : '修改影音', leaf: true, href:'success.jsp',hrefTarget:'right'},
+        { text : '批量上传', leaf: true, href:'video/uploadeVideoList_back.action',hrefTarget:'right'},
+        { text : '发布影音', leaf: true, href:'success.jsp',hrefTarget:'right' }  
+        ]  
+}
+,{  
+        text : '商品', 
+        children : [  
+        {text:'商品管理',
+        	children:[
+        	{ text : '添加商品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑商品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '删除商品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '搜索商品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '导入导出', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '批量操作', leaf: true, href:'success.jsp',hrefTarget:'right'}
+        	]
+        },  
+	    {text :'商品配置',  
+	       	children : [  
+			{ text : '分类管理' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+			{ text : '规格管理' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+			{ text : '品牌管理' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+			{ text : '标签管理' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+			{ text : '库存提醒' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	     	]
+	     }	
+        ]  
+}
+,{  
+        text :'订单列表',  
+        children : [  
+          	{ text : '添加订单' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '处理订单' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '筛选订单' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '单据管理' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'会员',  
+        children : [  
+        {text:'会员管理',
+        	children:[
+        	{ text : '添加会员' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '删除会员' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '搜索会员' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '批量操作' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        	]
+         }, 	
+        {text:'会员等级',
+        	children:[
+        	{ text : '添加等级' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '查看等级' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '删除等级' , leaf : true ,  href:'success.jsp',hrefTarget:'right'} 
+        	]
+         }, 
+         {text:'会员注册',
+        	children:[
+        	{ text : '新增注册项' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '编辑注册项' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '隐藏注册项' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '删除注册项' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        	]
+         }, 
+         { text : '隐私保护' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+         { text : '注册协议' , leaf : true ,  href:'success.jsp',hrefTarget:'right'}
+         	
+        ]
+}
+,{  
+        text :'客服',  
+	        children : [
+	        {text :'咨询列表',  
+	        children : [  
+	        { text : '回复咨询' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '删除咨询' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '搜索咨询' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	        ]
+			},
+	        {text :'评论列表',  
+	        children : [  
+	        { text : '回复评论' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '隐藏评论' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '删除评论' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '搜索评论' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	        ]
+			},
+          	{text :'站内消息',  
+	        children : [  
+	        { text : '回复站内信' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '删除站内信' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '搜索站内信' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	        ]
+			},
+			{text :'消息设置',  
+	        children : [  
+	        { text : '基本设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '咨询设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '评论设置' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	        ]
+			},
+			{text :'邮件短信服务',  
+	        children : [  
+	        { text : '邮件平台设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '短信平台设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+	        { text : '编辑模板' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+	        ]
+			}
+        ]
+}
+,{  
+        text :'促销',  
+        children : [  
+          	{ text : '添加商品' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑商品' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '批量操作' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'优惠',  
+        children : [
+        {text:'赠品管理',
+        	children:[
+        	{ text : '添加赠品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑赠品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '删除赠品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '搜索赠品', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '分类赠品', leaf: true, href:'success.jsp',hrefTarget:'right'}
+        	]
+        }, 
+         {text:'优惠券',
+        	children:[
+        	{ text : '添加优惠券', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑优惠券', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '删除优惠券', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '导出优惠券', leaf: true, href:'success.jsp',hrefTarget:'right'},
+            { text : '优惠券使用记录', leaf: true, href:'success.jsp',hrefTarget:'right'}
+        	]
+        },
+        { text : '凑单功能配置', leaf: true, href:'success.jsp',hrefTarget:'right'}
+        
+        ]
+}
+,{  
+        text :'注册营销配置',  
+        children : [  
+            { text : '优惠券' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '送积分' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'模板列表',  
+        children : [  
+            { text : '查看' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '上传' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '编辑' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '页面管理' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'站点管理',  
+        children : [  
+            { text : '导航菜单' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '站点配置' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '售后服务配置' , leaf : true, href:'success.jsp',hrefTarget:'right' },  
+            { text : '自定义url' , leaf : true, href:'success.jsp',hrefTarget:'right' }
+        ]
+}
+,{  
+        text :'页面管理',  
+        children : [  
+          	{ text : '发布文章' , leaf : true ,  href:'passagepage/backpage/uploadPassage.jsp',hrefTarget:'right'},
+            { text : '文章列表' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '搜索文章' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '异常页面' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'安全管理',  
+        children : [  
+          	{ text : '后台访问设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '前台访问设置' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'友情链接',  
+        children : [  
+          	{ text : '添加' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '编辑' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '删除' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'统计',  
+        children : [  
+          	{ text : '经营概况' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '账款统计' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '销售统计' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '会员统计' , leaf : true ,  href:'success.jsp',hrefTarget:'right'} 
+        ]
+}
+,{  
+        text :'系统',  
+        children : [  
+          	{ text : '定时任务' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '同步日志管理' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '查看日志' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '删除日志' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+          	{ text : '搜索日志' , leaf : true ,  href:'success.jsp',hrefTarget:'right'} ,
+          	{ text : '备份' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '还原' , leaf : true ,  href:'success.jsp',hrefTarget:'right'}
+        ]
+}
+,{  
+        text :'商店设置',  
+        children : [  
+          	{ text : '商店基本设置' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '店家信息' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '自定义支付' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '购物设置' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'应用中心',  
+        children : [  
+          	{ text : '更新' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '维护' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'配送管理',  
+        children : [  
+          	{ text : '配送方式' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '物流公司' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '物流跟踪' , leaf : true, href:'success.jsp',hrefTarget:'right' } , 
+            { text : '快递单' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'地区管理',  
+        children : [  
+          	{ text : '添加地区' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '添加子地区' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '删除' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+,{  
+        text :'角色管理',  
+        children : [  
+          	{ text : '新建角色' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '编辑角色' , leaf : true ,  href:'success.jsp',hrefTarget:'right'},
+            { text : '删除管理员' , leaf : true, href:'success.jsp',hrefTarget:'right' } , 
+            { text : '添加管理员' , leaf : true, href:'success.jsp',hrefTarget:'right' }  
+        ]
+}
+]

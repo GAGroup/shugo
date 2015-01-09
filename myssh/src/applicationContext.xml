@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" 
+	 xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+	<!-- <bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/myssh"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean> -->
+	
+		 <!-- 定义使用C3P0连接池的数据源 -->
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 指定连接数据库的JDBC库 -->
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<!-- 连接数据库所用的URL -->
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+		<!-- 连接数据库的用户名 -->
+		<property name="user" value="${jdbc.user}" />
+		<!-- 连接数据库的密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<!-- 设置数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<!-- 设置数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<!-- 设置数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		<!-- 设置数据库连接池的连接的最大空闲时间，单位为秒 -->
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		</bean> 
+	
+	<bean id="placeholderProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:placeholder.properties</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
+			</props>
+		</property>
+		
+		<!-- 实体映射 -->
+		<property name="mappingResources">
+			<list>
+			<!-- 用户资源实体列表 -->
+				<value>com/user/entity/UserExPropertyValue.hbm.xml</value>
+				<value>com/user/entity/UserExProperty.hbm.xml</value>
+				<value>com/user/entity/UserFunction.hbm.xml</value>
+				<value>com/user/entity/UserGroup.hbm.xml</value>
+				<value>com/user/entity/UserInfo.hbm.xml</value>
+				<value>com/user/entity/UserTag.hbm.xml</value>
+				<value>com/user/entity/User.hbm.xml</value>
+				<!-- 影音实体列表 -->
+				<value>com/video/entity/VideoInfo.hbm.xml</value>
+				<value>com/video/entity/VideoType.hbm.xml</value>
+				<value>com/video/entity/VideoDirector.hbm.xml</value>
+				<value>com/video/entity/VideoExValue.hbm.xml</value>
+				<value>com/video/entity/VideoExProperty.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager" >  
+		<property name="sessionFactory"><ref bean="sessionFactory"/></property> 
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="browse*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="list*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="load*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="get*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="is*" propagation="REQUIRED" read-only="true"/>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice> 
+	<!--各功能 dao,service,action配置 --> 
+	  
+	<import resource="applicationUser.xml"/><!-- 用户管理 -->
+	<import resource="applicationVideo.xml"/><!-- 影音管理 -->
+	<import resource="applicationWares.xml"/><!-- 商品管理 -->
+	
+	</beans>
